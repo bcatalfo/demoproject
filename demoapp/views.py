@@ -21,3 +21,8 @@ def pathview(request, name, id):
 
 def home(request):
     return HttpResponse("Hello- this is the home page!")
+
+
+def qryview(request):
+    get = request.GET
+    return HttpResponse(f"Name:{get['name']} UserID:{get['id']}")
