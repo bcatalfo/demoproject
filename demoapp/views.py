@@ -3,7 +3,16 @@ from django.http import HttpResponse
 
 
 def index(request):
-    return HttpResponse("Hello, world. This is the index view of Demoapp")
+    path = request.path
+    method = request.method
+    content = """
+    <center><h2>Testing Django Request Response Objects</h2>
+    <p>Request path : " {}</p>
+    <p>Request Method : {}</p></center>
+    """.format(
+        path, method
+    )
+    return HttpResponse(content)
 
 
 def home(request):
