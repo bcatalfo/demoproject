@@ -15,5 +15,9 @@ def index(request):
     return HttpResponse(content)
 
 
+def pathview(request, name, id):
+    return HttpResponse(f"Name:{name} UserID:{id}")
+
+
 def home(request):
     return HttpResponse("Hello- this is the home page!")
