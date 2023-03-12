@@ -26,3 +26,14 @@ def home(request):
 def qryview(request):
     get = request.GET
     return HttpResponse(f"Name:{get['name']} UserID:{get['id']}")
+
+
+def showform(request):
+    return render(request, "form.html")
+
+
+def getform(request):
+    if request.method == "POST":
+        id = request.POST["id"]
+        name = request.POST["name"]
+    return HttpResponse(f"Name:{name} UserID:{id}")
