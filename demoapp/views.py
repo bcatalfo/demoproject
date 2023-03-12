@@ -37,3 +37,13 @@ def getform(request):
         id = request.POST["id"]
         name = request.POST["name"]
     return HttpResponse(f"Name:{name} UserID:{id}")
+
+
+def menuitems(request, dish):
+    items = {
+        "pasta": "Pasta is a type of noodle blah blah",
+        "falafel": "Falafel are deep fried patties or balls made from blah blah",
+        "cheesecake": "Cheesecake is a type of dessert made with blah blah",
+    }
+    description = items[dish]
+    return HttpResponse(f"<h2> {dish} </h2>{description}")
