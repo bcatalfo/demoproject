@@ -13,6 +13,14 @@ admin.site.unregister(User)
 
 @admin.register(User)
 class NewAdmin(UserAdmin):
+    def get_form(self, request, obj=None, **kwargs):
+        form = super().get_form(request, obj, **kwargs)
+
+        if not request.user.is_superuser:
+            form.base_fields["username"].disabled = True
+
+        return form
+
     readonly_fields = [
         "date_joined",
     ]
