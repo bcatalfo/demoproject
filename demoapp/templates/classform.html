@@ -1,0 +1,9 @@
+<html>
+<body>
+    <form action="/form" action="POST">
+        {% csrf_token %}
+        <table>
+            {{ f }}
+        </table>
+    </form>
+</body>

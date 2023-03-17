@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .forms import ApplicationForm
 
 
 def index(request):
@@ -26,6 +27,12 @@ def home(request):
 def qryview(request):
     get = request.GET
     return HttpResponse(f"Name:{get['name']} UserID:{get['id']}")
+
+
+def showclassform(request):
+    form = ApplicationForm()
+
+    return render(request, "classform.html", {"f": form})
 
 
 def showform(request):
