@@ -6,7 +6,6 @@ from .models import Menu, MenuCategory, Person
 # Register your models here.
 admin.site.register(Menu)
 admin.site.register(MenuCategory)
-admin.site.register(Person)
 
 # Unregister the provided model admin
 admin.site.unregister(User)
@@ -25,3 +24,8 @@ class NewAdmin(UserAdmin):
     readonly_fields = [
         "date_joined",
     ]
+
+
+@admin.register(Person)
+class PersonAdmin(admin.ModelAdmin):
+    list_display = ("Person_name", "age")
