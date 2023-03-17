@@ -1,9 +1,8 @@
-<html>
-<body>
-    <form action="/form" action="POST">
-        {% csrf_token %}
-        <table>
-            {{ f }}
-        </table>
-    </form>
-</body>
+<h1>Apply for Catalfo Corp!</h1>
+<form action="/demo/getclassform/" method="POST">
+    {% csrf_token %}
+    <table>
+        {{ f.as_table }}
+    </table>
+    <input type="submit" value="Apply">
+</form>

@@ -8,5 +8,6 @@ urlpatterns = [
     path("showform/", views.showform, name="showform"),
     path("getform/", views.getform, name="getform"),
     path("dishes/<str:dish>", views.menuitems),
-    path("classform/", views.showclassform),
+    path("showclassform/", views.showclassform),
+    path("getclassform/", views.getclassform),
 ]

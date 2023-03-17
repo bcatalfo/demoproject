@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseNotAllowed, HttpResponseForbidden
 from .forms import ApplicationForm
 
 
@@ -33,6 +33,19 @@ def showclassform(request):
     form = ApplicationForm()
 
     return render(request, "classform.html", {"f": form})
+
+
+def getclassform(request):
+    if request.method != "POST":
+        return HttpResponseNotAllowed(["POST"])
+    form = ApplicationForm(request.POST)
+    if not form.is_valid():
+        return HttpResponseForbidden("Invalid form")
+    name = form.cleaned_data["name"]
+    field = form.cleaned_data["field"]
+    return HttpResponse(
+        f"Congratulations, {name}! You have successfully submitted your application for {field}."
+    )
 
 
 def showform(request):
