@@ -1,11 +1,12 @@
 from django.contrib import admin
 from django.contrib.auth.models import User
 from django.contrib.auth.admin import UserAdmin
-from .models import Menu, MenuCategory
+from .models import Menu, MenuCategory, Person
 
 # Register your models here.
 admin.site.register(Menu)
 admin.site.register(MenuCategory)
+admin.site.register(Person)
 
 # Unregister the provided model admin
 admin.site.unregister(User)
