@@ -29,3 +29,4 @@ class NewAdmin(UserAdmin):
 @admin.register(Person)
 class PersonAdmin(admin.ModelAdmin):
     list_display = ("Person_name", "age")
+    search_fields = ("Person_name__startswith",)
