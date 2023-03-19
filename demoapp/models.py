@@ -45,3 +45,12 @@ class Vehicle(models.Model):
     customer = models.ForeignKey(
         Customer, on_delete=models.CASCADE, related_name="Vehicle"
     )
+
+
+class Product(models.Model):
+    ProductID = models.IntegerField()
+    name = models.TextField()
+    category = models.TextField()
+
+    class Meta:
+        permissions = [("can_change_category", "Can change category")]
