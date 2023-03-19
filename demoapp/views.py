@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseNotAllowed, HttpResponseForbidden
+from django.core.exceptions import PermissionDenied
 from .forms import ApplicationForm
 
 
@@ -22,6 +23,12 @@ def pathview(request, name, id):
 
 def home(request):
     return HttpResponse("Hello- this is the home page!")
+
+
+def secretmessage(request):
+    if request.user.is_anonymous:
+        raise PermissionDenied()
+    return HttpResponse("Steven likes Pokemon :3")
 
 
 def qryview(request):

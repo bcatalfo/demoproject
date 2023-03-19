@@ -21,4 +21,5 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("demo/", include("demoapp.urls")),
     path("", views.home, name="home"),
+    path("secretmessage/", views.secretmessage, name="secret message"),
 ]
