@@ -22,4 +22,5 @@ urlpatterns = [
     path("demo/", include("demoapp.urls")),
     path("", views.home, name="home"),
     path("secretmessage/", views.secretmessage, name="secret message"),
+    path("secretmessage2/", views.secretmessage2, name="secret message (decorator)"),
 ]

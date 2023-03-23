@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseNotAllowed, HttpResponseForbidden
 from django.core.exceptions import PermissionDenied
+from django.contrib.auth.decorators import login_required
 from .forms import ApplicationForm
 
 
@@ -29,6 +30,11 @@ def secretmessage(request):
     if request.user.is_anonymous:
         raise PermissionDenied()
     return HttpResponse("Steven likes Pokemon :3")
+
+
+@login_required
+def secretmessage2(request):
+    return HttpResponse("Dan likes Kirby ^-^")
 
 
 def qryview(request):
