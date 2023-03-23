@@ -66,9 +66,10 @@ def showform(request):
 
 
 def getform(request):
-    if request.method == "POST":
-        id = request.POST["id"]
-        name = request.POST["name"]
+    if request.method != "POST":
+        return HttpResponseNotAllowed(["POST"])
+    id = request.POST["id"]
+    name = request.POST["name"]
     return HttpResponse(f"Name:{name} UserID:{id}")
 
 
