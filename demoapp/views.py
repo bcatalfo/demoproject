@@ -26,6 +26,10 @@ def home(request):
     return HttpResponse("Hello- this is the home page!")
 
 
+def hello_template(request):
+    return render(request, "hello.html", {})
+
+
 def secretmessage(request):
     if request.user.is_anonymous:
         raise PermissionDenied()
