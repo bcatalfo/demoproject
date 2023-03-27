@@ -11,4 +11,5 @@ urlpatterns = [
     path("showclassform/", views.showclassform),
     path("getclassform/", views.getclassform),
     path("hello/<name>/", views.hello_template),
+    path("about/", views.about),
 ]

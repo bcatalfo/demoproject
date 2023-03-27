@@ -26,6 +26,10 @@ def home(request):
     return HttpResponse("Hello- this is the home page!")
 
 
+def about(request):
+    return render(request, "about.html")
+
+
 def hello_template(request, name):
     context = {"name": name}
     return render(request, "hello.html", context)
