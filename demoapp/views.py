@@ -26,8 +26,9 @@ def home(request):
     return HttpResponse("Hello- this is the home page!")
 
 
-def hello_template(request):
-    return render(request, "hello.html", {})
+def hello_template(request, name):
+    context = {"name": name}
+    return render(request, "hello.html", context)
 
 
 def secretmessage(request):

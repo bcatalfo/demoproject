@@ -10,5 +10,5 @@ urlpatterns = [
     path("dishes/<str:dish>", views.menuitems),
     path("showclassform/", views.showclassform),
     path("getclassform/", views.getclassform),
-    path("hello/", views.hello_template),
+    path("hello/<name>/", views.hello_template),
 ]
