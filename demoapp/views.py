@@ -27,7 +27,10 @@ def home(request):
 
 
 def about(request):
-    return render(request, "about.html")
+    about_content = {
+        "about": "This is a demo Django project made by Benjamin Catalfo. The author is using this project for educational purposes as he goes through the Django Web Framework course as part of the Meta Back-End Developer Professional Certificate."
+    }
+    return render(request, "about.html", about_content)
 
 
 def hello_template(request, name):
